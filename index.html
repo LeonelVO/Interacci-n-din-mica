@@ -4,163 +4,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Interaccion Dinamica</title>
+    <title>Interaccion-Dinamica</title>
 </head>
 
 <body>
-    
-</body>
-        <div>
-        <div class="mainContent borderRadiusGenerator">
-         <ul class="generatorList" id="cssGeneratorMenu"></ul>
-        <div class="generators clearfix">
-         <div id="generator8">
-             <h1 class="centered">Online Border Radius Generator</h1>
-                <div class="settingRow visibleBorderOnly">
-                    <table id="borderRadiusTable">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="blueCell sharpCornerBR">
-                                        <input id="radiusTopLeftInput" value="0" min="0" type="number">
-                                        <div id="radiusTopLeft">
-                                          <div id="radiusTopLeft-handle" class="ui-slider-handle"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-around">
-                                            <input class="rangeB" type="range" min="0" max="40" value="0" step="1">
-                                        </div>
-                                        <label><input type="checkbox" name="borderRadiusAllTheSame" id="borderRadiusAllTheSame" checked /> All the same</label>
-                                    </div>
-                                </td>
-                                <td class="centered">
-                                    &nbsp;
-                                </td>
-                                <td style="vertical-align: bottom;">
-                                    <div class="blueCell sharpCornerBL">
-                                        <input id="radiusTopRightInput" value="0" min="0" type="number">
-                                        <div id="radiusTopRight">
-                                          <div id="radiusTopRight-handle" class="ui-slider-handle"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-around">
-                                            <input class="rangeB" type="range" min="0" max="40" value="0" step="1">
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="verticalAlignTop">
-                                </td>
-                                <td>
-                                    <div id="borderPreviewWrap">
-                                        <div id="borderPeview">
-                                            <textarea cols="20" name="comments" rows="3" id="generatedRadiusCode" spellcheck="false"></textarea>
-                                            <!-- <div id="clickToCopyWarning">Click to copy</div> -->
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="blueCell sharpCornerTR">
-                                        <input id="radiusBottomLeftInput" value="0" min="0" type="number">
-                                        <div id="radiusBottomLeft">
-                                          <div id="radiusBottomLeft-handle" class="ui-slider-handle"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-around">
-                                            <input class="rangeB" type="range" min="0" max="40" value="0" step="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <div class="blueCell sharpCornerTL">
-                                        <input id="radiusBottomRightInput" value="0" min="0" type="number">
-                                        <div id="radiusBottomRight">
-                                          <div id="radiusBottomRight-handle" class="ui-slider-handle"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-around">
-                                            <input class="rangeB" type="range" min="0" max="40" value="0" step="1">
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="settingRow">
-                    <div class="settingRow">
-                        <div class="settingRowLabel">
-                            Width: <span class="resetToThis" data-callfunction="refreshBorder" data-slider="borderWidth">1</span>
-                            <div class="d-flex justify-content-around">
-                                <input class="rangeB" type="range" min="0" max="40" value="0" step="1">
-                            </div>
-                        </div>
-                        <div class="settingRowInput" style="max-width: 300px;float: left;">
-                            <div id="borderWidth">
-                              <div id="borderWidth-handle" class="ui-slider-handle"></div>
-                            </div>
+    <header>
+        <div class="titulo d-flex justify-content-center fw-bold fs-4">
+            Online Border Radius Generator
+        </div>
+        
+    </header>
+    <main class="container mb-5">
+        <section class="generator" >
+            <div class="part1 d-flex flex-row mt-3">
+                <div class="part-1-1 d-flex justify-content-center">
+                    <div class="item-1 d-flex justify-content-center align-items-center flex-column">
+                        <input type="number" min="0" class="numero fw-bold text-center fs-4" value="0">
+                        <input class="mt-1" type="range" id="topleft" name="vol" min="0" max="40" value="0" >
+                        <div>
+                            <input class="check "type="checkbox" name="" id="" name="Allsamne">
+                            <span class="fs-5">All the same</span>
                         </div>
                     </div>
                 </div>
-                <div class="settingRow">
-                    <div class="settingRow">
-                        <div class="settingRowLabel">
-                            Style:
-                        </div>
-                        <div class="settingRowInput">
-                            <div id="borderStyle">
-                                <div id="borderStyles">
-                                    <a style="border-style: solid;" title="solid" class="selected">solid</a>
-                                    <a style="border-style: dotted;" title="dotted">dotted</a>
-                                    <a style="border-style: dashed;" title="dashed">dashed</a>
-                                    <a style="border-style: double;" title="double">double</a>
-                                    <a style="border-style: groove;" title="groove">groove</a>
-                                    <a style="border-style: ridge;" title="ridge">ridge</a>
-                                    <a style="border-style: inset;" title="inset">inset</a>
-                                    <a style="border-style: outset;" title="outset">outset</a>
-                                    <a style="border-style: hidden;" title="hidden">hidden</a>
-                                    <a style="border-style: none;" title="none">none</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="part-1-2">
+
                 </div>
-                <div class="settingRow">
-                    <div class="settingRowLabel">
-                        Color:
-                    </div>
-                    <div class="settingRowInput">
-                        <input class="jscolor" id="borderColor" value="1C6EA4" />
-                        <div class="wrapBorderOpacity">
-                            <div id="borderColorOpacity">
-                              <div id="borderColorOpacity-handle" class="ui-slider-handle"></div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-around">
-                            <input class="rangeB" type="range" min="0" max="40" value="0" step="1">
-                        </div>
-                        <span class="resetToThis" data-callfunction="refreshBorder" data-slider="borderColorOpacity">1</span>
-                    </div>
-                </div>
-                <div class="settingRow clearfix">
-                    <div class="settingRowLabel">
-                        Position:
-                    </div>
-                    <div class="settingRowInput">
-                        <div id="whichBorder">
-                            <a class="selected" title="border" style="border: 4px solid #1C6EA4;">All</a>
-                            <a title="border-top" style="border-top: 4px solid #1C6EA4;">Top</a>
-                            <a title="border-right" style="border-right: 4px solid #1C6EA4;">Right</a>
-                            <a title="border-bottom" style="border-bottom: 4px solid #1C6EA4;">Bottom</a>
-                            <a title="border-left" style="border-left: 4px solid #1C6EA4;">Left</a>
-                        </div>
+                <div class="part-1-3 d-flex justify-content-center align-items-end">
+                    <div class="item-2 d-flex justify-content-center align-items-center flex-column">
+                        <input type="number" min="0" class="numero fw-bold text-center fs-4" value="0">
+                        <input class="mt-1" type="range" id="topright" name="vol" min="0" max="40" value="0" >
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
- </div>
 
+       
+            <div class="part2 d-flex justify-content-center align-items-center mt-3">
+                <div>
+                    <textarea class="fw-bold p-4"  name="" id="" cols="50" rows="5">
+                            
+                    </textarea>
+                </div>
+            </div>
+            <div class="part3">
+                <div class="part1 d-flex flex-row mt-3">
+                    <div class="part-1-1 d-flex justify-content-center">
+                        <div class="item-3 d-flex justify-content-center align-items-center flex-column">
+                            <input type="number" min="0" class="numero fw-bold text-center fs-4" value="0">
+                            <input class="mt-1" type="range" id="bottomleft" name="vol" min="0" max="40" value="0">
+                        </div>
+                    </div>
+                    <div class="part-1-2">
+    
+                    </div>
+                    <div class="part-1-3 d-flex justify-content-center align-items-end">
+                        <div class="item-4 d-flex justify-content-center align-items-center flex-column">
+                            <input type="number" min="0" class="numero fw-bold text-center fs-4" value="0">
+                            <input class="mt-1" type="range" id="bottomright" name="vol" min="0" max="40" value="0" >
+                        </div>
+                    </div>
+            </div>
+        </section >
+        <section class="buttoms mt-5 d-flex flex-column">
+            <div class="p1 d-flex flex-row mt-6">
+                <div class="widthsec ms-5">
+                    <span class="fs-5">Width:</span>
+                    <button class="buttun1">
+                        <span class="fs-5">1</span>
+                    </button>
+                </div>
+                <input class="mt-1 ms-3" type="range" id="widthrange" name="vol" min="0" max="30" value="0" >
+            </div>
+            <div class="p2 d-flex flex-row mt-3 w-100">
+                <div class="stylesec ms-5 d-flex justify-content-end">
+                    <span class="fs-5">Style:</span>
+                </div>
+                <button class="solid ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">solid</span></button>
+                <button class="dotted ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">dotted</span></button>
+                <button class="dashed ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">dashed</span></button>
+                <button class="double ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">double</span></button>
+                <button class="groove ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">groove</span></button>
+                <button class="ridge ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">ridge</span></button>
+                <button class="inset ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">inset</span></button>
+                <button class="outset ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">outset</span></button>
+                <button class="hidden ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">hideen</span></button>
+                <button class="none ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">none</span></button>
+            </div>
+            <div class="p3 d-flex flex-row mt-3">
+                <div class="colorsec ms-5 d-flex justify-content-end">
+                    <span class="fs-5">Color:</span>
+                </div>
+                <input class="color ms-3" type="color" name="" id="" value="#196393">
+                <input class="ms-3" type="range" min="0" max="1" value="0" id=""> 
+                <button class="buttun1 ms-5">
+                    <span class="fs-5">1</span>
+                </button>
+            </div>
+            <div class="p4 d-flex flex-row mt-3">
+                <div class="positionsec ms-5 d-flex justify-content-end">
+                    <span class="fs-5">Position:</span>
+                </div>
+                <button class="all ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">All</span></button>
+                <button class="top ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">Top</span></button>
+                <button class="right ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">Right</span></button>
+                <button class="bottom ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">Bottom</span></button>
+                <button class="left ms-3 d-flex justify-content-center align-items-center"> <span class="fs-5">Left</span></button>
+
+            </div>
+   
+        </section>
+    </main>    
+</body>
 </html>
